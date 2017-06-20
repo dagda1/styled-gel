@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { space, width } from 'styled-system';
+import PropTypes from 'prop-types';
 
 const hoc = Comp => ({ width, ...props }) => <Comp {...props} w={width} />;
 
@@ -12,3 +13,7 @@ export const Col = hoc(styled.div([],
   space,
   flex
 ));
+
+Col.propTypes = {
+  flex: PropTypes.string
+}
