@@ -6,8 +6,12 @@ import { media } from '..';
 
 const hoc = Comp => ({ width, ...props }) => <Comp {...props} w={width} />;
 
+const align = props => props.align ? `align-items:${props.align};` : null;
+const justify = props => props.justify ? `justify-content:${props.justify};` : null;
+const order = props => props.order ? `order:${props.order};` : null;
+
 const StyledCol = styled.div`
-  boxSizing: 'border-box';
+  box-sizing: border-box;
   display: inline-block;
   padding-left: 8px;
   text-align: left;
@@ -16,11 +20,15 @@ const StyledCol = styled.div`
   letter-spacing: normal;
   word-spacing: normal;
   text-rendering: auto;
-  ${width};
-  ${space};
-  ${media.sm`
+  ${props => !props.flush && media.sm`
     padding-left: 16px;
   `}
+  ${props => props.flush && 'padding-left: 0;'}
+  ${align};
+  ${justify};
+  ${order};
+  ${width};
+  ${space};
 `;
 
 const Col = ({ tag, width, children, ...rest }) => {
@@ -38,6 +46,10 @@ Col.propTypes = {
       PropTypes.string,
       PropTypes.array
     ]),
+  align: PropTypes.string,
+  justify: PropTypes.string,
+  order: PropTypes.string,
+  flush: PropTypes.bool,
   children: PropTypes.node
 }
 
