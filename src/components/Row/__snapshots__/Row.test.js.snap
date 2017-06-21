@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="sc-bxivhb dwYFbF"
+  className="sc-bxivhb kuGIKt"
   wrap={true}
 >
   Foo

@@ -12,6 +12,13 @@ const grow = props => props.grow? `flex-grow: 1` : null;
 
 const StyledRow = styled.div`
   display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  margin-right: 0;
+  margin-left: -8px;
+  padding-right: 0;
+  padding-left: 0;
+  ${props => props.flush && `margin-left: 0`};
   ${wrap};
   ${align};
   ${justify};
@@ -34,7 +41,8 @@ Row.propTypes = {
   order: PropTypes.string,
   wrap: PropTypes.bool,
   column: PropTypes.bool,
-  grow: PropTypes.bool
+  grow: PropTypes.bool,
+  flush: PropTypes.bool
 }
 
 Row.defaultProps = {

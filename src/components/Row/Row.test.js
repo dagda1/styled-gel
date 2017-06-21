@@ -15,6 +15,14 @@ it('should render a div with display flexbox and flex-wrap', () => {
   expect(css.includes('flex-wrap: wrap')).toBe(true);
 });
 
+it('should remove gutter with flush prop', () => {
+  wrap({ flush: true });
+
+  const css = getCSSFromDom();
+
+  expect(css.includes('padding-left: 0'));
+});
+
 it('renders correctly', () => {
   const row = renderer.create(<Row>Foo</Row>);
 
