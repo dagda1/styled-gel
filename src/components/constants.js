@@ -9,3 +9,5 @@ export const breakPoints = {
 };
 
 export default values(breakPoints);
+
+export const defaultColumns = 12;

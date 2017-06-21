@@ -33,7 +33,7 @@ Row.propTypes = {
   column: PropTypes.bool,
   grow: PropTypes.bool,
   children: PropTypes.node
-}
+};
 
 Row.defaultProps = {
   wrap: true,

@@ -13,4 +13,4 @@ describe('Col', () => {
 
     //expect(wrapper.type().target).toBe('div');
   });
-})
+});
