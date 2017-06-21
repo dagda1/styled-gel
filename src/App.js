@@ -33,7 +33,6 @@ class App extends Component {
             <Col
               px={2}
               my={1}
-              width={1}
             >
               <Bar>100%</Bar>
             </Col>

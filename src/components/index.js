@@ -18,5 +18,5 @@ export { media } from '../util/styles';
 
 export { Grid } from './Grid/Grid';
 export { Row } from './Row/Row';
-export { Col } from './Col/Col';
+export { default as Col } from './Col/Col';
 export { Bar } from './Bar/Bar';

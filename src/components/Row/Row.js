@@ -18,7 +18,6 @@ const StyledRow = styled.div`
   margin-left: -8px;
   padding-right: 0;
   padding-left: 0;
-  ${props => props.flush && `margin-left: 0`};
   ${wrap};
   ${align};
   ${justify};
@@ -28,6 +27,7 @@ const StyledRow = styled.div`
   ${media.sm`
     margin-left: -16px;
   `};
+  ${props => props.flush && `margin-left: 0`};
 `;
 
 export const Row = ({ children, ...rest }) =>
@@ -42,7 +42,8 @@ Row.propTypes = {
   wrap: PropTypes.bool,
   column: PropTypes.bool,
   grow: PropTypes.bool,
-  flush: PropTypes.bool
+  flush: PropTypes.bool,
+  children: PropTypes.node
 }
 
 Row.defaultProps = {
