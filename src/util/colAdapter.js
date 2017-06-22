@@ -1,10 +1,10 @@
-import { breakPoints, defaultColumns } from '../components/constants';
+import { breakpoints, defaultColumns } from '../components/constants';
 import { findLastIndex } from 'lodash';
 
 export const colAdapter = (props) => {
   const noOfColumns = (props.theme && props.theme.columns) || defaultColumns;
 
-  const widths = Object.keys(breakPoints)
+  const widths = Object.keys(breakpoints)
         .map((breakPoint) => {
           const value = props[breakPoint];
 

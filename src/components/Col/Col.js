@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { space, width } from 'styled-system';
 import PropTypes from 'prop-types';
 import { media } from '..';
-import { colAdapter } from '../../util/colAdapter';
+import { colAdapter } from '..';
+import { ThemeHOC } from '..';
 
 const align = props => props.align ? `align-items:${props.align};` : null;
 const justify = props => props.justify ? `justify-content:${props.justify};` : null;
@@ -32,7 +33,7 @@ const StyledCol = styled.div`
 
 StyledCol.displayName = 'StyledCol';
 
-const Col = ({ tag, width, children, ...rest }) => {
+export const Col = ({ tag, children, ...rest }) => {
   const Tag = StyledCol.withComponent(tag);
 
   const widthProps = colAdapter(rest);
@@ -53,7 +54,12 @@ Col.propTypes = {
   justify: PropTypes.string,
   order: PropTypes.string,
   flush: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
+  xs: PropTypes.number,
+  sm: PropTypes.number,
+  md: PropTypes.number,
+  lg: PropTypes.number,
+  xl: PropTypes.number
 }
 
 Col.defaultProps = {
@@ -62,4 +68,4 @@ Col.defaultProps = {
 
 Col.displayName = 'Col';
 
-export default Col;
+export default ThemeHOC(withTheme(Col));

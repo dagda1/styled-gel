@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import XRay from 'react-x-ray';
 import { Grid, Row, Col, Bar } from './components';
 
+console.log(Col);
+
 class App extends Component {
   constructor(...args) {
     super(...args);
@@ -29,34 +31,7 @@ class App extends Component {
       >
         <Grid>
           <Row>
-            <Col
-              my={1}
-            >
-              <Bar>100%</Bar>
-            </Col>
-          </Row>
-          <Row>
-            <Col
-              my={1}
-              xs={12}
-              sm={6}
-            >
-              <Bar>50%</Bar>
-            </Col>
-            <Col
-              my={1}
-              xs={12}
-              sm={6}
-            >
-             <Bar>50%</Bar>
-            </Col>
-          </Row>
-          <Row>
-            <Col
-              my={1}
-              xs={12}>
-              <button type="button" onClick={this.toggleXRay}>Toggle XRAY</button>
-            </Col>
+            <Col xs={12} sm={3} md={4} lg={5} xl={6}>Fuck</Col>
           </Row>
         </Grid>
       </XRay>

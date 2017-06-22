@@ -13,9 +13,11 @@ if(process.env.NODE_ENV !== 'test') {
   `;
 }
 
-export { breakPoints } from './constants';
+export { breakpoints, default as breakPointValues, defaultColumns } from './constants';
 export { media } from '../util/styles';
+export { colAdapter } from '../util/colAdapter';
 
+export { ThemeHOC } from './HOC/Theme';
 export { Grid } from './Grid/Grid';
 export { Row } from './Row/Row';
 export { default as Col } from './Col/Col';

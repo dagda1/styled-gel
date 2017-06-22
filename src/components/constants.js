@@ -1,6 +1,6 @@
 import { values } from 'lodash';
 
-export const breakPoints = {
+export const breakpoints = {
   xs:  '25em',    // 400px
   sm:  '37.5em',  // 600px
   md:  '56.25',   // 900px
@@ -8,6 +8,6 @@ export const breakPoints = {
   xl:  '80em'     // 1280px
 };
 
-export default values(breakPoints);
+export default values(breakpoints).map(v => Number(v.replace(/em$/g, '')));
 
 export const defaultColumns = 12;
