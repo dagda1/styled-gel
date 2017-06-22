@@ -12,7 +12,6 @@ class App extends Component {
   }
 
   toggleXRay = () => {
-    console.log(this.state.xray);
     this.setState({
       xray: !this.state.xray
     });
@@ -38,14 +37,16 @@ class App extends Component {
           </Row>
           <Row>
             <Col
-              width={[1, 1/2]}
               my={1}
+              xs={12}
+              sm={6}
             >
               <Bar>50%</Bar>
             </Col>
             <Col
               my={1}
-              width={[1, 1/2]}
+              xs={12}
+              sm={6}
             >
              <Bar>50%</Bar>
             </Col>
@@ -53,7 +54,7 @@ class App extends Component {
           <Row>
             <Col
               my={1}
-              width={1}>
+              xs={12}>
               <button type="button" onClick={this.toggleXRay}>Toggle XRAY</button>
             </Col>
           </Row>

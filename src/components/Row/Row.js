@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import { media } from '..';
-
 const wrap = props => props.wrap ? 'flex-wrap: wrap;' : null;
 const column = props => props.column ? `flex-direction:column;` : null;
 const grow = props => props.grow? `flex-grow: 1` : null;

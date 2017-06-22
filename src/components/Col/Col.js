@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { space, width } from 'styled-system';
 import PropTypes from 'prop-types';
 import { media } from '..';
-
-const hoc = Comp => ({ width, ...props }) => <Comp {...props} w={width} />;
+import { colAdapter } from '../../util/colAdapter';
 
 const align = props => props.align ? `align-items:${props.align};` : null;
 const justify = props => props.justify ? `justify-content:${props.justify};` : null;
@@ -31,11 +30,15 @@ const StyledCol = styled.div`
   ${space};
 `;
 
+StyledCol.displayName = 'StyledCol';
+
 const Col = ({ tag, width, children, ...rest }) => {
   const Tag = StyledCol.withComponent(tag);
 
+  const widthProps = colAdapter(rest);
+
   return (
-    <Tag {...rest}>{children}</Tag>
+    <Tag {...widthProps} {...rest}>{children}</Tag>
   );
 }
 
@@ -54,10 +57,9 @@ Col.propTypes = {
 }
 
 Col.defaultProps = {
-  w: 1,
   tag: 'div'
 };
 
 Col.displayName = 'Col';
 
-export default hoc(Col);
+export default Col;

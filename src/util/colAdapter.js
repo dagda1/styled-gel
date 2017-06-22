@@ -1,27 +1,23 @@
-import { breakPoints, columns } from '../components/constants';
+import { breakPoints, defaultColumns } from '../components/constants';
 import { findLastIndex } from 'lodash';
 
 export const colAdapter = (props) => {
-  const noOfColumns = (props.theme && props.theme.columns) || columns;
+  const noOfColumns = (props.theme && props.theme.columns) || defaultColumns;
 
   const widths = Object.keys(breakPoints)
-        .reduce((acc, breakPoint) => {
+        .map((breakPoint) => {
           const value = props[breakPoint];
 
-          if(!value) {
-            acc.push(null);
+          if(!value) return null;
 
-            return acc;
-          }
-
-          const width = Number(value) / noOfColumns;
-
-          acc.push(width);
-
-          return acc;
-        }, []);
+          return Number(value) / noOfColumns;
+        });
 
   const endIndex = findLastIndex(widths, x => !!x);
+
+  if(endIndex === -1) {
+    return { w: 1 };
+  }
 
   const w = [];
 
