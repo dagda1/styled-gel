@@ -41,11 +41,11 @@ const Col = ({ tag, width, children, ...rest }) => {
 
 Col.propTypes = {
   tag: PropTypes.string,
-    w: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-      PropTypes.array
-    ]),
+  w: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.array
+  ]),
   align: PropTypes.string,
   justify: PropTypes.string,
   order: PropTypes.string,

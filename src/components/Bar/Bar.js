@@ -6,3 +6,5 @@ export const Bar = styled.div`
   background-color: #d4e7eb;
   color: #121212;
 `;
+
+Bar.displayName = 'Bar';

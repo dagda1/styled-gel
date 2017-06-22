@@ -37,5 +37,8 @@ Row.propTypes = {
 
 Row.defaultProps = {
   wrap: true,
-  grow: true
+  grow: true,
+  column: false
 };
+
+Row.displayName = 'Row';
