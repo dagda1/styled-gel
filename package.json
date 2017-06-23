@@ -1,7 +1,13 @@
 {
   "name": "styled-gel",
   "version": "0.1.0",
-  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "babel src -d lib",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom"
+  },
   "dependencies": {
     "grid-styled": "^2.0.0-2",
     "lodash": "^4.17.4",
@@ -54,11 +60,6 @@
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.3"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
-  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
@@ -83,14 +84,6 @@
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     }
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      "transform-class-properties"
-    ]
   },
   "eslintConfig": {
     "extends": "react-app"

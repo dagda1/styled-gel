@@ -6,9 +6,13 @@ Lightweight bootstrap like grid system that uses [flexbox](https://css-tricks.co
 
 If like me, you still think about grids in terms of bootstrap, `Row`, `Col`, `xs`, `sm`, `md`, `lg` and `xl`, then look no further.
 
+```sh
+npm i styled-gel
+```
+
 ### Usage
 
-```
+```js
 import { Grid, Row, Col } from 'styled-gel';
 
 export const MyComponent = () =>
@@ -27,3 +31,5 @@ Built on top of and much `props` to:
 
 - [styled-components](https://github.com/styled-components/styled-components)
 - [styled-system](https://github.com/jxnblk/styled-system)
+
+MIT License

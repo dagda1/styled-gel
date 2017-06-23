@@ -31,7 +31,34 @@ class App extends Component {
       >
         <Grid>
           <Row>
-            <Col xs={12} sm={3} md={4} lg={5} xl={6}>Fuck</Col>
+            <Col
+              my={1}
+            >
+              <Bar>100%</Bar>
+            </Col>
+          </Row>
+          <Row>
+            <Col
+              my={1}
+              xs={12}
+              sm={6}
+            >
+              <Bar>50%</Bar>
+            </Col>
+            <Col
+              my={1}
+              xs={12}
+              sm={6}
+            >
+             <Bar>50%</Bar>
+            </Col>
+          </Row>
+          <Row>
+            <Col
+              my={1}
+              xs={12}>
+              <button type="button" onClick={this.toggleXRay}>Toggle XRAY</button>
+            </Col>
           </Row>
         </Grid>
       </XRay>
