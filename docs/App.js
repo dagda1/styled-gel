@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import XRay from 'react-x-ray';
-import { Grid, Row, Col, Bar } from './components';
+import { Grid, Row, Col, Bar } from '../src/components';
 
 console.log(Col);
 
