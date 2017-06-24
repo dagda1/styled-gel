@@ -1,7 +1,6 @@
 import { values } from 'lodash';
 
 export const breakpoints = {
-  xs:  '0',       // < 576px - Extra small screen / phone
   sm:  '36em',    // > 576px - Small screen / phone
   md:  '48em',    // > 768px - Medium screen / tablet
   lg:  '62em',    // > 992px - Large screen / desktop

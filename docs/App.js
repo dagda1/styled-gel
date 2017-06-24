@@ -3,8 +3,6 @@ import XRay from 'react-x-ray';
 import { Grid, Row, Col } from '../src/components';
 import { Bar } from './Bar/Bar';
 
-console.log(Col);
-
 class App extends Component {
   constructor(...args) {
     super(...args);
