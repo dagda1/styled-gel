@@ -21,4 +21,3 @@ export { ThemeHOC } from './HOC/Theme';
 export { Grid } from './Grid/Grid';
 export { Row } from './Row/Row';
 export { default as Col } from './Col/Col';
-export { Bar } from './Bar/Bar';

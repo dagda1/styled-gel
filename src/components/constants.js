@@ -1,11 +1,11 @@
 import { values } from 'lodash';
 
 export const breakpoints = {
-  xs:  '25em',    // 400px
-  sm:  '37.5em',  // 600px
-  md:  '56.25',   // 900px
-  lg:  '63em',    // 1008px
-  xl:  '80em'     // 1280px
+  xs:  '0',       // < 576px - Extra small screen / phone
+  sm:  '36em',    // > 576px - Small screen / phone
+  md:  '48em',    // > 768px - Medium screen / tablet
+  lg:  '62em',    // > 992px - Large screen / desktop
+  xl:  '75em'     // > 1200px
 };
 
 export default values(breakpoints).map(v => Number(v.replace(/em$/g, '')));

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import XRay from 'react-x-ray';
-import { Grid, Row, Col, Bar } from '../src/components';
+import { Grid, Row, Col } from '../src/components';
+import { Bar } from './Bar/Bar';
 
 console.log(Col);
 
@@ -41,14 +42,14 @@ class App extends Component {
             <Col
               my={1}
               xs={12}
-              sm={6}
+              md={6}
             >
               <Bar>50%</Bar>
             </Col>
             <Col
               my={1}
               xs={12}
-              sm={6}
+              md={6}
             >
              <Bar>50%</Bar>
             </Col>

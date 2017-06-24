@@ -1,5 +1,7 @@
 ## Styled-Gel
 
+[![Build Status](https://travis-ci.org/dagda1/styled-gel.svg?branch=master)](https://travis-ci.org/dagda1/styled-gel)
+
 [BBC Gel Grid](https://github.com/bbc/gel-grid) over [Styled Components](https://www.styled-components.com/).
 
 Lightweight bootstrap like grid system that uses [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
