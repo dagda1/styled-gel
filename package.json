@@ -1,6 +1,6 @@
 {
   "name": "styled-gel",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "main": "lib/index.js",
   "scripts": {
     "prepublishOnly": "npm run build",

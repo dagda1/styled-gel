@@ -33,7 +33,7 @@ class App extends Component {
             <Col
               my={1}
             >
-              <Bar>100%</Bar>
+              <Bar>100% All devices</Bar>
             </Col>
           </Row>
           <Row>
@@ -42,14 +42,25 @@ class App extends Component {
               xs={12}
               md={6}
             >
-              <Bar>50%</Bar>
+              <Bar>50% tablet - 100% mobile</Bar>
             </Col>
             <Col
               my={1}
               xs={12}
               md={6}
             >
-             <Bar>50%</Bar>
+              <Bar>50% tablet - 100% mobile</Bar>
+            </Col>
+          </Row>
+          <Row>
+            <Col my={1} xs={12} md={4}>
+              <Bar>33.3% tablet - 100% mobile</Bar>
+            </Col>
+            <Col my={1} xs={12} md={4}>
+              <Bar>33.3% tablet - 100% mobile</Bar>
+            </Col>
+            <Col my={1} xs={12} md={4}>
+              <Bar>33.3% tablet - 100% mobile</Bar>
             </Col>
           </Row>
           <Row>
