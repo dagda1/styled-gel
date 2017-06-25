@@ -11,3 +11,4 @@ export const breakpoints = {
 export default values(breakpoints).map(v => Number(v.replace(/em$/g, '')));
 
 export const defaultColumns = 12;
+export const gutterWidth = 30;

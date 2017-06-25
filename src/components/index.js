@@ -13,7 +13,7 @@ if(process.env.NODE_ENV !== 'test') {
   `;
 }
 
-export { breakpoints, default as breakPointValues, defaultColumns } from './constants';
+export { breakpoints, default as breakPointValues, defaultColumns, gutterWidth } from './constants';
 export { media } from '../util/styles';
 export { colAdapter } from '../util/colAdapter';
 

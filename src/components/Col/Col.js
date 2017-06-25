@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { media } from '..';
 import { colAdapter } from '..';
 import { ThemeHOC } from '..';
-import { ifProp } from 'styled-tools';
 
 const align = props => props.align ? `align-items:${props.align};` : null;
 const justify = props => props.justify ? `justify-content:${props.justify};` : null;
@@ -14,14 +13,14 @@ const order = props => props.order ? `order:${props.order};` : null;
 const StyledCol = styled.div`
   position: relative;
   box-sizing: border-box;
-  padding-left: ${ifProp('flush', '0', '7.5px')};
-  padding-right: ${ifProp('flush', '0', '7.5px')};
+  padding-left: ${props => props.flush ? '0' : `${Number(props.theme.gutterWidth / 4)}px`};
+  padding-right: ${props => props.flush ? '0' : `${Number(props.theme.gutterWidth / 4)}px`};
   min-height: 1px;
   box-sizing: border-box;
   width: 100%;
   ${props => !props.flush && media.sm`
-    padding-left: 16px;
-    padding-right: 16px
+    padding-left: ${Number(props.theme.gutterWidth) / 2}px;
+    padding-right: ${Number(props.theme.gutterWidth) / 2}px;
   `}
   ${props => props.flush && 'padding-left: 0;padding-right: 0'}
   ${align};

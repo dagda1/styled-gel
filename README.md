@@ -62,6 +62,7 @@ import { ThemeProvider } from 'styled-components'
 import App from './App';
 
 const theme = {
+  gutterWidth: 20,
   columns: 13,
   breakpoints: [
     32, 48, 64, 128, 256
