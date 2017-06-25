@@ -6,21 +6,10 @@
 
 Lightweight bootstrap like grid system for reactjs that uses [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-![styled-grid](grid.png)
-
-## Dependencies
-Built on top of and much `props` to:
-
-- [react](https://facebook.github.io/react/)
-- [styled-components](https://github.com/styled-components/styled-components)
-- [styled-system](https://github.com/jxnblk/styled-system)
-
-## raison d'etre
+## Why?
 If like me, you still think about grids in terms of bootstrap, `Row`, `Col`, `xs`, `sm`, `md`, `lg` and `xl`, then look no further.
 
-```sh
-npm i --save styled-gel
-```
+![styled-grid](grid3.png)
 
 ## Usage
 
@@ -30,12 +19,38 @@ import { Grid, Row, Col } from 'styled-gel';
 export const MyComponent = () =>
   <Grid>
     <Row>
-      <Col xs={12} md={3}>One</Col>
-      <Col xs={12} md={3}>Two</Col>
-      <Col xs={12} md={3}>Three</Col>
-      <Col xs={12} md={3}>Four</Col>
+      <Col my={1}>
+        <Bar>100% All devices</Bar>
+      </Col>
     </Row>
-  </Grid>;
+    <Row>
+      <Col xs={12} md={6} my={1}>
+        <Bar>50% tablet - 100% mobile</Bar>
+      </Col>
+      <Col xs={12} md={6} my={1}>
+        <Bar>50% tablet - 100% mobile</Bar>
+      </Col>
+    </Row>
+    <Row flush>
+      <Col xs={12} md={6} my={1}>
+        <Bar>Flush column - no gutters 50%</Bar>
+      </Col>
+      <Col xs={12} md={6} my={1}>
+        <Bar>Flush column - no gutters 50%</Bar>
+      </Col>
+    </Row>
+  </Grid>
+```
+
+## Dependencies
+Built on top of and much `props` to:
+
+- [react](https://facebook.github.io/react/)
+- [styled-components](https://github.com/styled-components/styled-components)
+- [styled-system](https://github.com/jxnblk/styled-system)
+
+```sh
+npm i --save styled-gel
 ```
 
 ## Breakpoints
@@ -67,6 +82,8 @@ The following overridable theme options can be used to style a grid component:
 | bodyBg       | Background Colour                          | inherit       |
 | textColor    | font color                                 | inherit       |
 
+## Example of using the ThemeProvider to override the above properties
+
 ```jsx
 import { ThemeProvider } from 'styled-components'
 import App from './App';
@@ -74,7 +91,6 @@ import App from './App';
 const theme = {
   bodyBg: #fff',
   textColor: '#333',
-  fontFamily: '',
   gutterWidth: 20,
   columns: 13,
   breakpoints: [
@@ -87,6 +103,21 @@ const App = props => (
     <App />
   </ThemeProvider>
 )
+```
+
+## no gutters
+
+Pass the `flush` property to the `<Row />` component to render `<Col />` column instances with no gutters.
+
+```jsx
+<Row flush>
+  <Col md={6}>
+    <Bar>no gutters 50%</Bar>
+  </Col>
+  <Col md={6}>
+    <Bar>no gutters 50%</Bar>
+  </Col>
+</Row>
 ```
 
 ## Run Sample Project

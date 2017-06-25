@@ -13,23 +13,12 @@ const demo = `
         <Bar>50% tablet - 100% mobile</Bar>
       </Col>
     </Row>
-    <Row>
-      <Col xs={12} md={4} my={1}>
-        <Bar>33.3% tablet - 100% mobile</Bar>
-      </Col>
-      <Col xs={12} md={4} my={1}>
-        <Bar>33.3% tablet - 100% mobile</Bar>
-      </Col>
-      <Col xs={12} md={4} my={1}>
-        <Bar>33.3% tablet - 100% mobile</Bar>
-      </Col>
-    </Row>
     <Row flush>
       <Col xs={12} md={6} my={1}>
         <Bar>Flush column - no gutters 50%</Bar>
       </Col>
       <Col xs={12} md={6} my={1}>
-        <Bar>Flush column - not gutters 50%</Bar>
+        <Bar>Flush column - no gutters 50%</Bar>
       </Col>
     </Row>
   </Grid>
