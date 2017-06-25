@@ -63,6 +63,14 @@ class App extends Component {
               <Bar>33.3% tablet - 100% mobile</Bar>
             </Col>
           </Row>
+          <Row flush>
+            <Col my={1} xs={12} md={6}>
+              <Bar>Flush column - no gutters 50%</Bar>
+            </Col>
+            <Col my={1} xs={12} md={6}>
+              <Bar>Flush column - not gutters 50%</Bar>
+            </Col>
+          </Row>
           <Row>
             <Col
               my={1}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Row } from './Row';
+import { Row, Col } from '..';
 import { getCSSFromDom } from '../../util/testUtils';
 import renderer from 'react-test-renderer';
 
@@ -20,7 +20,16 @@ it('should remove gutter with flush prop', () => {
 
   const css = getCSSFromDom();
 
-  expect(css.includes('padding-left: 0'));
+  expect(css.includes('margin-left: 0'));
+  expect(css.includes('margin-right: 0'));
+});
+
+it('should pass flush property to children', () => {
+  const wrapper = wrap({ flush: true, children: <Col>Foo Bar</Col> });
+
+  const col = wrapper.find(Col);
+
+  expect(col.props().flush).toBe(true);
 });
 
 it('renders correctly', () => {

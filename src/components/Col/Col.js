@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { media } from '..';
 import { colAdapter } from '..';
 import { ThemeHOC } from '..';
+import { ifProp } from 'styled-tools';
 
 const align = props => props.align ? `align-items:${props.align};` : null;
 const justify = props => props.justify ? `justify-content:${props.justify};` : null;
@@ -13,10 +14,8 @@ const order = props => props.order ? `order:${props.order};` : null;
 const StyledCol = styled.div`
   position: relative;
   box-sizing: border-box;
-  ${props => !props.flush &&  `
-    padding-left: 7.5px;
-    padding-right: 7.5px;
-  `}
+  padding-left: ${ifProp('flush', '0', '7.5px')};
+  padding-right: ${ifProp('flush', '0', '7.5px')};
   min-height: 1px;
   box-sizing: border-box;
   width: 100%;
@@ -24,7 +23,7 @@ const StyledCol = styled.div`
     padding-left: 16px;
     padding-right: 16px
   `}
-  ${props => props.flush && 'padding-left: 0;'}
+  ${props => props.flush && 'padding-left: 0;padding-right: 0'}
   ${align};
   ${justify};
   ${order};
