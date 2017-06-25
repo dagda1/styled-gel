@@ -1,87 +1,69 @@
-import React, { Component } from 'react';
-import XRay from 'react-x-ray';
+import React from 'react';
+import styled from 'styled-components';
 import { Grid, Row, Col } from '../src/components';
 import { Bar } from './Bar/Bar';
+import XRay from 'react-x-ray';
+import { space } from 'styled-system';
+import demo from './Demo';
+import {
+  LiveProvider,
+  LivePreview,
+  LiveError,
+  LiveEditor,
+} from 'react-live';
 
-class App extends Component {
-  constructor(...args) {
-    super(...args);
+const colors = {
+  blue: '#3af',
+  dark: '#001e33'
+};
 
-    this.state = {
-      xray: false
-    };
-  }
+const Provider = styled(LiveProvider)`
+  position: relative;
+`
 
-  toggleXRay = () => {
-    this.setState({
-      xray: !this.state.xray
-    });
-  }
+const Preview = styled(LivePreview)`
+   overflow: auto;
+`
 
-  render() {
-    const {
-      xray
-    } = this.state;
+const Editor = styled(LiveEditor)`
+  ${space}
+  height: 60vh;
+  min-height: 256px;
+  overflow: auto;
+  outline: none;
+  color: ${colors.blue};
+  background-color: ${colors.dark};
+`
 
-    return (
-      <XRay
-        disabled={!xray}
-        style={{ transition: 'background-color .3s ease-out' }}
-      >
-        <Grid>
-          <Row>
-            <Col
-              my={1}
-            >
-              <Bar>100% All devices</Bar>
-            </Col>
-          </Row>
-          <Row>
-            <Col
-              my={1}
-              xs={12}
-              md={6}
-            >
-              <Bar>50% tablet - 100% mobile</Bar>
-            </Col>
-            <Col
-              my={1}
-              xs={12}
-              md={6}
-            >
-              <Bar>50% tablet - 100% mobile</Bar>
-            </Col>
-          </Row>
-          <Row>
-            <Col my={1} xs={12} md={4}>
-              <Bar>33.3% tablet - 100% mobile</Bar>
-            </Col>
-            <Col my={1} xs={12} md={4}>
-              <Bar>33.3% tablet - 100% mobile</Bar>
-            </Col>
-            <Col my={1} xs={12} md={4}>
-              <Bar>33.3% tablet - 100% mobile</Bar>
-            </Col>
-          </Row>
-          <Row flush>
-            <Col my={1} xs={12} md={6}>
-              <Bar>Flush column - no gutters 50%</Bar>
-            </Col>
-            <Col my={1} xs={12} md={6}>
-              <Bar>Flush column - not gutters 50%</Bar>
-            </Col>
-          </Row>
-          <Row>
-            <Col
-              my={1}
-              xs={12}>
-              <button type="button" onClick={this.toggleXRay}>Toggle XRAY</button>
-            </Col>
-          </Row>
-        </Grid>
-      </XRay>
-    );
-  }
-}
+const Err = styled(LiveError)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 13px;
+  padding: 16px;
+  color: #fff;
+  background-color: #f00;
+`;
+
+const scope = {
+  styled,
+  Grid,
+  Row,
+  Col,
+  Bar
+};
+
+const App =  props => (
+  <Provider
+    scope={scope}
+    code={demo}
+    mountStylesheet={false}>
+    <Err />
+    <Preview />
+    <Editor p={3} />
+  </Provider>
+)
 
 export default App;
