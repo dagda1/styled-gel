@@ -11,17 +11,18 @@ const justify = props => props.justify ? `justify-content:${props.justify};` : n
 const order = props => props.order ? `order:${props.order};` : null;
 
 const StyledCol = styled.div`
+  position: relative;
   box-sizing: border-box;
-  display: inline-block;
-  padding-left: 8px;
-  text-align: left;
-  vertical-align: top;
+  ${props => !props.flush &&  `
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  `}
+  min-height: 1px;
   box-sizing: border-box;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-rendering: auto;
+  width: 100%;
   ${props => !props.flush && media.sm`
     padding-left: 16px;
+    padding-right: 16px
   `}
   ${props => props.flush && 'padding-left: 0;'}
   ${align};

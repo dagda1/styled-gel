@@ -1,15 +1,24 @@
 import styled from 'styled-components';
 import { media } from '..';
+import { key } from 'styled-theme';
+import { breakpoints } from '../constants';
 
 export const Grid = styled.div`
+  position: relative;
   max-width: 1008px;
   margin: 0 auto;
-  padding-right: 8px;
-  padding-left: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  background-color: ${key('bodyBg', 'inherit')};
+  ${media.sm`
+    padding-left: 15px;
+    padding-right: 15px;
+  `}
+  ${media.lg`
+    max-width: ${breakpoints.lg};
+  `}
   ${media.xl`
-     max-width: 1280px;
+    max-width: ${breakpoints.xl};
   `}
 `;
 

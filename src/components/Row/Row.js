@@ -11,14 +11,14 @@ const StyledRow = styled.div`
   flex-flow: row wrap;
   list-style: none;
   margin-right: 0;
-  margin-left: -8px;
-  padding-right: 0;
-  padding-left: 0;
+  margin-left: -7.5px;
+  margin-right: -7.5px;
   ${wrap};
   ${column};
   ${grow};
   ${media.sm`
-    margin-left: -16px;
+    margin-left: -15px;
+    margin-right: -15px;
   `};
 `;
 

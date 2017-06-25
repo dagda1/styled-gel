@@ -19,7 +19,7 @@ Built on top of and much `props` to:
 If like me, you still think about grids in terms of bootstrap, `Row`, `Col`, `xs`, `sm`, `md`, `lg` and `xl`, then look no further.
 
 ```sh
-npm i styled-gel
+npm i --save styled-gel
 ```
 
 ## Usage
