@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dagda1/styled-gel.svg?branch=master)](https://travis-ci.org/dagda1/styled-gel)
 
-[BBC Gel Grid](https://github.com/bbc/gel-grid) over [Styled Components](https://www.styled-components.com/).
+[Bootstrap 4 Grid](https://v4-alpha.getbootstrap.com/layout/grid/) over [Styled Components](https://www.styled-components.com/).
 
 Lightweight bootstrap like grid system for reactjs that uses [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
@@ -55,13 +55,26 @@ export const breakpoints = {
 
 ## Configuration
 
-styled-system can be configured with styled-components to override the breakpoints and number of columns in a row with more configuration options to come.
+styled-system can be configured with styled-components to override the breakpoints, gutter width, background colour of the grid and number of columns in a row with more configuration options to come.
+
+The following overridable theme options can be used to style a grid component:
+
+| Property     | Description                                | Default value |
+| :-------     |:-------------------------------------------| :-------------|
+| columns      | number of columns a row is subdivided into | 12            |
+| gutterWidth  | pixel width between columns                | 30px          |
+| breakpoints  | the xs, sm, md, lg, xl values in em        | [36,49,62,75] |
+| bodyBg       | Background Colour                          | inherit       |
+| textColor    | font color                                 | inherit       |
 
 ```jsx
 import { ThemeProvider } from 'styled-components'
 import App from './App';
 
 const theme = {
+  bodyBg: #fff',
+  textColor: '#333',
+  fontFamily: '',
   gutterWidth: 20,
   columns: 13,
   breakpoints: [

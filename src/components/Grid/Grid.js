@@ -10,6 +10,8 @@ export const Grid = styled.div`
   padding-right: 7.5px;
   padding-left: 7.5px;
   background-color: ${key('bodyBg', 'inherit')};
+  color: ${key('textColor', 'inherit')};
+  fontFamily: ${key('fontFamily', 'inherit')};
   ${media.sm`
     padding-left: 15px;
     padding-right: 15px;
