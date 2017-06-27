@@ -1,29 +1,24 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Grid, Row, Col } from '../src/components';
-import { Bar } from './Bar/Bar';
-import XRay from 'react-x-ray';
-import { space } from 'styled-system';
-import demo from './Demo';
-import {
-  LiveProvider,
-  LivePreview,
-  LiveError,
-  LiveEditor,
-} from 'react-live';
+import React from "react";
+import styled from "styled-components";
+import { Grid, Row, Col } from "../src/components";
+import { Bar } from "./Bar/Bar";
+import XRay from "react-x-ray";
+import { space } from "styled-system";
+import demo from "./Demo";
+import { LiveProvider, LivePreview, LiveError, LiveEditor } from "react-live";
 
 const colors = {
-  blue: '#3af',
-  dark: '#001e33'
+  blue: "#3af",
+  dark: "#001e33"
 };
 
 const Provider = styled(LiveProvider)`
   position: relative;
-`
+`;
 
 const Preview = styled(LivePreview)`
    overflow: auto;
-`
+`;
 
 const Editor = styled(LiveEditor)`
   ${space}
@@ -33,7 +28,7 @@ const Editor = styled(LiveEditor)`
   outline: none;
   color: ${colors.blue};
   background-color: ${colors.dark};
-`
+`;
 
 const Err = styled(LiveError)`
   position: absolute;
@@ -55,15 +50,11 @@ const scope = {
   Bar
 };
 
-const App =  props => (
-  <Provider
-    scope={scope}
-    code={demo}
-    mountStylesheet={false}>
+const App = props =>
+  <Provider scope={scope} code={demo} mountStylesheet={false}>
     <Err />
     <Preview />
     <Editor p={3} />
-  </Provider>
-)
+  </Provider>;
 
 export default App;
