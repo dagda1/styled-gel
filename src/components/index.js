@@ -1,6 +1,6 @@
 import { injectGlobal } from 'styled-components';
 
-if(process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV !== 'test') {
   // eslint-disable-next-line
   injectGlobal`
     html {
@@ -13,7 +13,12 @@ if(process.env.NODE_ENV !== 'test') {
   `;
 }
 
-export { breakpoints, default as breakPointValues, defaultColumns, gutterWidth } from './constants';
+export {
+  breakpoints,
+  default as breakPointValues,
+  defaultColumns,
+  gutterWidth
+} from './constants';
 export { media } from '../util/styles';
 export { colAdapter } from '../util/colAdapter';
 

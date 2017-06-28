@@ -1,6 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { breakPointValues, defaultColumns, gutterWidth as defaultGutter } from '..';
+import {
+  breakPointValues,
+  defaultColumns,
+  gutterWidth as defaultGutter
+} from '..';
 
 const defaultBg = 'inherit';
 const defaultTextColor = 'inherit';
@@ -18,10 +22,10 @@ const constructTheme = (theme = {}) => {
     gutterWidth,
     breakpoints,
     columns
-  }
+  };
 };
 
 export const ThemeHOC = Comp => ({ theme, ...rest }) =>
   <ThemeProvider theme={constructTheme(theme)}>
-    <Comp {...rest}/>
+    <Comp {...rest} />
   </ThemeProvider>;

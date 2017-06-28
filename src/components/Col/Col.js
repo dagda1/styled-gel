@@ -6,24 +6,27 @@ import { media } from '..';
 import { colAdapter } from '..';
 import { ThemeHOC } from '..';
 
-const align = props => props.align ? `align-items:${props.align};` : null;
-const justify = props => props.justify ? `justify-content:${props.justify};` : null;
-const order = props => props.order ? `order:${props.order};` : null;
+const align = props => (props.align ? `align-items:${props.align};` : null);
+const justify = props =>
+  props.justify ? `justify-content:${props.justify};` : null;
+const order = props => (props.order ? `order:${props.order};` : null);
 
 const StyledCol = styled.div`
   position: relative;
   box-sizing: border-box;
-  padding-left: ${props => props.flush ? '0' : `${Number(props.theme.gutterWidth / 4)}px`};
-  padding-right: ${props => props.flush ? '0' : `${Number(props.theme.gutterWidth / 4)}px`};
+  padding-left: ${props =>
+    props.flush ? '0' : `${Number(props.theme.gutterWidth / 4)}px`};
+  padding-right: ${props =>
+    props.flush ? '0' : `${Number(props.theme.gutterWidth / 4)}px`};
   min-height: 1px;
   box-sizing: border-box;
   width: 100%;
-  ${props => !props.flush && media.sm`
+  ${props =>
+    !props.flush &&
+    media.sm`
     padding-left: ${Number(props.theme.gutterWidth) / 2}px;
     padding-right: ${Number(props.theme.gutterWidth) / 2}px;
-  `}
-  ${props => props.flush && 'padding-left: 0;padding-right: 0'}
-  ${align};
+  `} ${props => props.flush && 'padding-left: 0;padding-right: 0'} ${align};
   ${justify};
   ${order};
   ${width};
@@ -38,17 +41,15 @@ export const Col = ({ tag, children, ...rest }) => {
   const widthProps = colAdapter(rest);
 
   return (
-    <Tag {...widthProps} {...rest}>{children}</Tag>
+    <Tag {...widthProps} {...rest}>
+      {children}
+    </Tag>
   );
-}
+};
 
 Col.propTypes = {
   tag: PropTypes.string,
-  w: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-    PropTypes.array
-  ]),
+  w: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array]),
   align: PropTypes.string,
   justify: PropTypes.string,
   order: PropTypes.string,
@@ -59,7 +60,7 @@ Col.propTypes = {
   md: PropTypes.number,
   lg: PropTypes.number,
   xl: PropTypes.number
-}
+};
 
 Col.defaultProps = {
   tag: 'div'

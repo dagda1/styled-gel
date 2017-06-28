@@ -15,13 +15,11 @@ export const Grid = styled.div`
   ${media.sm`
     padding-left: 15px;
     padding-right: 15px;
-  `}
-  ${media.lg`
+  `} ${media.lg`
     max-width: ${breakpoints.lg};
-  `}
-  ${media.xl`
+  `} ${media.xl`
     max-width: ${breakpoints.xl};
-  `}
+  `};
 `;
 
 Grid.displayName = 'Grid';

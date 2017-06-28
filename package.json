@@ -1,6 +1,6 @@
 {
   "name": "styled-gel",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "main": "lib/index.js",
   "scripts": {
     "prepublishOnly": "npm run build",
@@ -35,11 +35,13 @@
     "dotenv": "4.0.0",
     "enzyme": "^2.8.2",
     "eslint": "3.19.0",
+    "eslint-config-prettier": "^2.2.0",
     "eslint-config-react-app": "^1.0.4",
     "eslint-loader": "1.7.1",
     "eslint-plugin-flowtype": "2.33.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "5.0.3",
+    "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "7.0.1",
     "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "0.11.1",
@@ -50,6 +52,7 @@
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.0.0",
     "postcss-loader": "2.0.5",
+    "prettier": "^1.5.2",
     "promise": "7.1.1",
     "react-dev-utils": "^3.0.0",
     "react-error-overlay": "^1.0.7",
@@ -95,8 +98,5 @@
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     }
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
